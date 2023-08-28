@@ -3,7 +3,11 @@ variable "region" {
   type = string
   default = "canadacentral"
 }
-
+variable "bookstore_title" {
+  description = "Bookstore title"
+  type = string
+  default = "AWS Bookstore"
+}
 variable "subnet_ids" {
   description = "Subnet IDs for the ECS cluster"
   type = list(string)

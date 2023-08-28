@@ -1,7 +1,11 @@
+resource "random_pet" "ecs_name" {
+  prefix = var.ecs_prefix
+}
+
 module "ecs" {
   source = "terraform-aws-modules/ecs/aws"
 
-  cluster_name = "ecs-bookstore"
+  cluster_name = random_pet.ecs_name.id
   fargate_capacity_providers = {
     FARGATE = {
       default_capacity_provider_strategy = {

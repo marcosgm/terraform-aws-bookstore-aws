@@ -29,7 +29,7 @@ module "ecs" {
             }
           ]
           environment = [
-            {"name": "bookstore_title", "value": "AWS Bookstore"}
+            {"name": "bookstore_title", "value": var.bookstore_title}
           ]
         }
       }
